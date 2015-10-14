@@ -1,0 +1,65 @@
+Example 1:
+
+Diagnosis(John,Uninfected)
+3
+LostWeight(x)&HasSymptom(x,Cough)=>Diagnosis(John,Uninfected)
+LostWeight(Tom)
+HasSymptom(Tom,Cough)
+
+TRUE
+
+---------------------------------
+Example 2:
+
+Diagnosis(Tom,Uninfected)
+3
+LostWeight(x)&HasSymptom(x,Cough)=>Diagnosis(John,Uninfected)
+LostWeight(Tom)
+HasSymptom(Tom,Cough)
+
+FALSE
+
+---------------------------------
+Example 3:
+
+Works(Alice,Aidagency)
+6
+Works(x,Aidagency)&HasTraveled(x,Timbuktu)=>Diagnosis(x,Infected)
+Diagnosis(x,Fever)=>HasSymptom(John,Fever)
+HasSymptom(x,Fever)&HasTraveled(x,Timbuktu)=>Works(Alice,Aidagency)
+Works(John,Aidagency)
+Diagnosis(John,Fever)
+HasTraveled(John,Timbuktu)
+
+TRUE
+
+---------------------------------
+Example 4:
+
+Diagnosis(John,Infected)
+6
+Works(x,Aidagency)&HasTraveled(x,Timbuktu)=>Diagnosis(x,Infected)
+Diagnosis(x,Fever)=>HasSymptom(John,Fever)
+HasSymptom(x,Fever)&HasTraveled(x,Timbuktu)=>Works(Alice,Aidagency)
+Works(John,Aidagency)
+Diagnosis(John,Fever)
+HasTraveled(John,Timbuktu)
+
+TRUE
+
+---------------------------------
+Example 5:
+
+Works(Alice,Aidagency)
+6
+Works(x,Aidagency)&HasTraveled(x,Timbuktu)=>Diagnosis(x,Infected)
+Diagnosis(x,Fever)=>HasSymptom(John,Fever)
+HasSymptom(x,Fever)&HasTraveled(x,Timbuktu)=>Works(Alice,Aidagency)
+Works(John,Aidagency)
+Diagnosis(John,Fever)
+HasTraveled(John,Sahara)
+
+FALSE
+
+
+
